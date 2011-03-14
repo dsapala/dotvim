@@ -8,6 +8,10 @@ endif
 set nocompatible
 
 " ADDED BY ME
+cd ~
+imap jj <Esc>
+set wildmenu                      " Enhanced command line completion.
+set wildmode=list:longest         " Complete files like a shell.
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
@@ -17,7 +21,7 @@ set bg=light
 " Set certain options if a gui is running
 " &term =~ "xterm-256"
 if has("gui_running")
-  set guifont=Menlo\ Regular:h14
+  " set guifont=Menlo\ Regular:h14
   set guioptions+=TlLb
   set guioptions-=TlLb
   set lines=60
@@ -29,10 +33,12 @@ else
   colorscheme default
 endif
 set hidden
-set ignorecase
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
 set vb " turns off visual bell
 set expandtab
 set smartindent
+set nowrap
 set laststatus=2
 set statusline=
 set statusline+=%-3.3n\                      " buffer number
@@ -102,7 +108,8 @@ endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-"set incsearch		" do incremental searching
+set incsearch                     " Highlight matches as you type.
+set hlsearch                      " Highlight matches.
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
