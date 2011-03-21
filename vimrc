@@ -76,6 +76,8 @@ let g:speckySpecSwitcherKey = "<leader>x"
 set grepprg=ack
 set grepformat=%f:%l:%m
 
+nnoremap + maO<esc>`a
+nnoremap - mao<esc>`a
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>f :Ack<Space>
 map <leader>ws :%s/\s\+$//<CR>
@@ -84,6 +86,7 @@ map <Leader>S <Plug>Vsurround
 map <Leader>om :call PreviewMKD()<CR>
 map <Leader>cz :new<CR>:ConqueTerm zsh<CR>
 map <Leader>cx :tab new<CR>:ConqueTerm zsh<CR>
+cmap w!! %!sudo tee > /dev/null %
 
 function! ToggleScratch()
   if expand('%') == g:ScratchBufferName
