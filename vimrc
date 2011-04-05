@@ -8,7 +8,6 @@ endif
 set nocompatible
 
 " ADDED BY ME
-cd ~
 imap jj <Esc>
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
@@ -26,9 +25,9 @@ if has("gui_running")
   set guioptions-=TlLb
   set lines=60
   set columns=120
-  colorscheme ir_black
+  colorscheme tolerable
 elseif &term =~ "-256color"
-	colorscheme ir_black
+	colorscheme tolerable
 else
   colorscheme default
 endif
@@ -86,6 +85,7 @@ map <Leader>S <Plug>Vsurround
 map <Leader>om :call PreviewMKD()<CR>
 map <Leader>cz :new<CR>:ConqueTerm zsh<CR>
 map <Leader>cx :tab new<CR>:ConqueTerm zsh<CR>
+map <Leader>cd :cd %:p:h<CR>:pwd<CR>
 cmap w!! %!sudo tee > /dev/null %
 
 function! ToggleScratch()
