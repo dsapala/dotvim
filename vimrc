@@ -49,6 +49,7 @@ set statusline+=%=                           " right align remainder
 set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P                         " file position
+set pastetoggle=<F3>                         " toggle paste mode on and off with F3
 
 match NonText /\s\s*$/
 
@@ -75,8 +76,8 @@ let g:speckySpecSwitcherKey = "<leader>x"
 set grepprg=ack
 set grepformat=%f:%l:%m
 
-nnoremap + maO<esc>`a
-nnoremap - mao<esc>`a
+"nnoremap + maO<esc>`a
+"nnoremap - mao<esc>`a
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>f :Ack<Space>
 map <leader>ws :%s/\s\+$//<CR>
@@ -87,6 +88,9 @@ map <Leader>cz :new<CR>:ConqueTerm zsh<CR>
 map <Leader>cx :tab new<CR>:ConqueTerm zsh<CR>
 map <Leader>cd :cd %:p:h<CR>:pwd<CR>
 cmap w!! %!sudo tee > /dev/null %
+"imap <Leader>v <C-O>:set paste<CR><C-r>*<C-O>:set nopaste<CR>
+map <Leader>non :set nu<CR>
+map <Leader>noff :set nu!<CR>
 
 function! ToggleScratch()
   if expand('%') == g:ScratchBufferName
