@@ -73,6 +73,11 @@ let g:speckyRunSpecCmd = "spec -cbfs"
 let g:speckyRunSpecKey = "<leader>r"
 let g:speckySpecSwitcherKey = "<leader>x"
 
+" clojure
+let vimclojure#HighlightBuiltins=1
+let vimclojure#ParenRainbow=1
+nmap <C-m> ggVG<C-c><C-c>
+
 set grepprg=ack
 set grepformat=%f:%l:%m
 

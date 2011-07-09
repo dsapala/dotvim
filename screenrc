@@ -10,3 +10,5 @@ terminfo * k8=\E[19~
 terminfo * k9=\E[20~
 terminfo * F1=\E[23~
 terminfo * F2=\E[24~
+defscrollback 5000
+
