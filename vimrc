@@ -96,6 +96,9 @@ cmap w!! %!sudo tee > /dev/null %
 "imap <Leader>v <C-O>:set paste<CR><C-r>*<C-O>:set nopaste<CR>
 map <Leader>non :set nu<CR>
 map <Leader>noff :set nu!<CR>
+"make < > shifts keep selection
+vnoremap < <gv
+vnoremap > >gv
 
 function! ToggleScratch()
   if expand('%') == g:ScratchBufferName
@@ -111,6 +114,8 @@ set backspace=indent,eol,start
 
 set backupdir=~/.vimswaps,/tmp
 set directory=~/.vimswaps,/tmp
+"set backupskip=/tmp/*,/private/tmp/*
+"au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
